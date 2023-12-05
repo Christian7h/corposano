@@ -23,10 +23,11 @@ STATIC_DIR=os.path.join(BASE_DIR,'static')
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY',default='your secret key')
-DEBUG = os.environ.get("ALLOWED_HOST").split("")
+
+DEBUG = os.environ.get("DEBUG","False").lower()=="true"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'RENDER' not in os.environ
+ALLOWED_HOSTS=os.environ.get("ALLOWRED_HOSTS").split("")
 
 ALLOWED_HOSTS = []
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
