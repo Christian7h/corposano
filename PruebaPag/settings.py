@@ -24,7 +24,7 @@ STATIC_DIR=os.path.join(BASE_DIR,'static')
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY',default='your secret key')
 
-DEBUG = True
+DEBUG = 'RENDER' not in os.environ
 
 # SECURITY WARNING: don't run with debug turned on in production!
 ALLOWED_HOSTS = []
