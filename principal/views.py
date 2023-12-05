@@ -1,5 +1,14 @@
+from logging import DEBUG
+from os import path
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.http import HttpResponseServerError
+from django.urls import URLPattern
+
+def server_error(request):
+    raise Exception("Server Error Test")
+if DEBUG:
+    URLPattern += [path('500/', server_error)]
 
 # Create your views here.
 def index(request):
@@ -20,3 +29,4 @@ def contacto(request):
 
 def agendar_cita(request):
     return render(request, 'agendar_cita.html')
+
