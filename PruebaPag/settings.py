@@ -23,6 +23,7 @@ STATIC_DIR=os.path.join(BASE_DIR,'static')
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY',default='your secret key')
+DEBUG = os.environ.get("ALLOWED_HOST").split("")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'RENDER' not in os.environ
@@ -124,6 +125,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
 if not DEBUG:
     STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles')
     STATICFILES_STORAGE='whitenoise.storage.CompressedManifestStaticFilesStorage'
