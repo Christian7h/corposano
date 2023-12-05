@@ -1,9 +1,6 @@
-from logging import DEBUG
-from os import path
+
 from django.shortcuts import render
-from django.http import HttpResponse
-from django.http import HttpResponseServerError
-from django.urls import URLPattern
+
 
 
 # Create your views here.
